@@ -1,0 +1,11 @@
+.logo {
+    border-bottom: none;
+    padding-bottom: 60px;
+
+}
+
+.logo img {
+    width: 171px;
+    height: 70px;
+    margin: 0;
+}

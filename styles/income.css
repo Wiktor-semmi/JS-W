@@ -1,0 +1,23 @@
+.income {
+    padding-left: 60px;
+}
+
+.title {
+    padding: 100px 0 40px 0;
+}
+
+.title h1 {
+    color: #052C65;
+    font-family: "Roboto 500", sans-serif;
+}
+
+.cells h3 {
+    color: #052C65;
+    font-family: "Roboto 500", sans-serif;
+}
+
+
+.delete {
+    display: none;
+}
+

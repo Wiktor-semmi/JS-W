@@ -1,0 +1,35 @@
+.income {
+    padding-left: 60px;
+}
+
+.title {
+    padding: 100px 0 40px 0;
+}
+.title h1 {
+    color: #052C65;
+    font-family: "Roboto 500", sans-serif;
+    font-size: 40px;
+}
+
+.cell img {
+    width: 16px;
+    height: 16px;
+
+}
+
+.cell-plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.delete {
+    display: none;
+
+}
+.delete .expenses-delete {
+    width: 530px;
+    height: 161px;
+    border-radius: 12px;
+}
