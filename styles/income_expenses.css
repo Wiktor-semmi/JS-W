@@ -1,36 +1,40 @@
 
-.container .trash img {
+.main .table .trash img {
     width: 13px;
     height: 15px;
     margin-right: 10px;
 }
 
-.container .pen img {
+.main .table .pen img {
     width: 16px;
     height: 16px;
 }
-.container .h6 {
-    font-family: "Roboto 700", sans-serif;
-/*padding: 16px 0 15px 0;*/
-    border-top: 1px solid #DEE2E6;
-    border-bottom: 1px solid #DEE2E6;
+.main .table thead {
+    border-top: 1px solid var(--bs-gray-300);
 }
-.container .h7 {
-    font-size: 14px;
-    /*padding: 11px 0 14px 0;*/
-    border-bottom: 1px solid #DEE2E6;
-}
-.income_expenses_button {
+
+.main .income_expenses_button {
     padding: 40px 0;
 }
-
-
-.delete {
-    display: none;
+.main .table button {
+    border: none;
+    background: none;
+}
+.modal-remove {
+    padding: 40px;
+    width: 530px;
+}
+.cater-mod {
+    width: 530px;
+}
+.modal-remove .modal-title {
+    font-family: "Roboto 500", sans-serif;
+    color: #290661;
+}
+.modal-remove .modal-action {
+    padding-top: 20px;
 }
 
-.delete .h8 {
-   font-size: 23px;
-    line-height: 23px;
-    letter-spacing: -0.04em;
+.modal-action {
+    gap: 12px;
 }
