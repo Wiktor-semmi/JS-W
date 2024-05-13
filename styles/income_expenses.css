@@ -1,10 +1,8 @@
-
 .main .table .trash img {
     width: 13px;
     height: 15px;
     margin-right: 10px;
 }
-
 .main .table .pen img {
     width: 16px;
     height: 16px;
@@ -20,21 +18,6 @@
     border: none;
     background: none;
 }
-.modal-remove {
-    padding: 40px;
-    width: 530px;
-}
-.cater-mod {
-    width: 530px;
-}
-.modal-remove .modal-title {
-    font-family: "Roboto 500", sans-serif;
-    color: #290661;
-}
-.modal-remove .modal-action {
-    padding-top: 20px;
-}
-
-.modal-action {
-    gap: 12px;
+.form-actions {
+    gap: 10px;
 }

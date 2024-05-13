@@ -119,52 +119,44 @@
 
     </div>
 
-    <div class="main">
-        <div class="container-main">
-            <div class="title">
-                <h1>Создание дохода/расхода</h1>
-            </div>
-            <section class="form">
-                <div class="form-details">
-                    <div class="form-group form-creation ">
-                        <label class="input-group" for="type">
-                            <input type="text" class="form-control" id="type" required placeholder="Тип...">
-                        </label>
-                    </div>
-                    <div class="form-group form-creation ">
-                        <label class="input-group" for="category">
-                            <input type="text" class="form-control" id="category" required placeholder="Категория...">
-                        </label>
-                    </div>
-                    <div class="form-group form-creation ">
-                        <label class="input-group" for="sum">
-                            <input type="text" class="form-control" id="sum" required placeholder="Сумма в $...">
-                        </label>
-                    </div>
-                    <div class="form-group form-creation ">
-                        <label class="input-group" for="data">
-                            <input type="text" class="form-control" id="data" required placeholder="Дата...">
-                        </label>
-                    </div>
-                    <div class="form-group form-creation ">
-                        <label class="input-group" for="comment">
-                            <input type="text" class="form-control" id="comment" required placeholder="Комментарий...">
-                        </label>
-                    </div>
+    <div class="main flex-grow-1">
+        <div class="title">
+            <h1>Создание дохода/расхода</h1>
+        </div>
+        <section class="form">
+            <div class="form-details">
+                <div class="form-group form-creation ">
+                    <label class="input-group" for="type">
+                        <input type="text" class="form-control" id="type" required placeholder="Тип...">
+                    </label>
                 </div>
-            </section>
-            <div class="cells">
-                <div class="buttons-creation">
-                    <div class="button-cell-correct">
-                        <form action="correct_income_expenses.html" target="_blank">
-                            <button class="btn btn-success">Создать</button>
-                        </form>
-                    </div>
-                    <div class="button-cell-delete">
-                        <button class="btn btn-danger">Отмена</button>
-                    </div>
+                <div class="form-group form-creation ">
+                    <label class="input-group" for="category">
+                        <input type="text" class="form-control" id="category" required placeholder="Категория...">
+                    </label>
+                </div>
+                <div class="form-group form-creation ">
+                    <label class="input-group" for="sum">
+                        <input type="text" class="form-control" id="sum" required placeholder="Сумма в $...">
+                    </label>
+                </div>
+                <div class="form-group form-creation ">
+                    <label class="input-group" for="data">
+                        <input type="text" class="form-control" id="data" required placeholder="Дата...">
+                    </label>
+                </div>
+                <div class="form-group form-creation ">
+                    <label class="input-group" for="comment">
+                        <input type="text" class="form-control" id="comment" required placeholder="Комментарий...">
+                    </label>
                 </div>
             </div>
+        </section>
+        <div class="form-action d-flex">
+            <form action="correct_income_expenses.html" target="_blank">
+                <button class="btn btn-success">Создать</button>
+            </form>
+            <button class="btn btn-danger">Отмена</button>
         </div>
     </div>
 </div>
