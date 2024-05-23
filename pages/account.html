@@ -20,7 +20,7 @@
               <span class="input-group-text">
                   <img src="../images/person.png" alt="name">
             </span>
-                <input type="text" class="form-control" id="name" required placeholder="ФИО">
+                <input type="text" class="form-control" id="name" required placeholder="Имя Фамилия">
             </label>
             <label class="input-group" for="email">
             <span class="input-group-text">
@@ -41,14 +41,14 @@
                 <input type="password" class="form-control" id="repeat_password" required
                        placeholder="Подтверждение пароля">
             </label>
-            <button type="button" class="btn btn-primary w-100">Войти</button>
+            <button type="button" id="process" class="btn btn-primary w-100" disabled>Войти</button>
             <div class="auth-text">
-                <span>Уже есть аккаунт?</span> <a href="index.html">Войдите в систему</a>
+                <span id="auth_text">Уже есть аккаунт?</span> <a href="index.html">Войдите в систему</a>
             </div>
         </div>
     </div>
 </section>
-
+<script src="../scripts/account.js"></script>
 
 </body>
 </html>
