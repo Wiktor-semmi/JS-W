@@ -11,17 +11,17 @@ body {
 }
 
 @font-face {
-    src: url("../fonts/Roboto-Medium.ttf");
+    src: url("../static/fonts/Roboto-Medium.ttf");
     font-family: "Roboto 500";
 }
 
 @font-face {
-    src: url("../fonts/Roboto-Regular.ttf");
+    src: url("../static/fonts/Roboto-Regular.ttf");
     font-family: "Roboto 400";
 }
 
 @font-face {
-    src: url("../fonts/Roboto-Bold.ttf");
+    src: url("../static/fonts/Roboto-Bold.ttf");
     font-family: "Roboto 700";
 }
 
