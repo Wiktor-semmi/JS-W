@@ -1,6 +1,6 @@
-import {Account} from "./componets/account.js";
-import {Form} from "./componets/form.js";
-import {Home} from "./componets/home.js";
+import {Account} from "./components/account.js";
+import {Form} from "./components/form.js";
+import {Home} from "./components/home.js";
 
 
 
@@ -10,17 +10,17 @@ export class Router {
             {
                 route: '#/',
                 title: 'Авторизация',
-                template: 'templates/form.html',
-                styles: 'styles/form.css',
+                template: 'templates/login.html',
+                // styles: 'styles/form.css',
                 load: () => {
                     new Form();
                 }
             },
             {
-                route: '#/form',
+                route: '#/registration',
                 title: 'Регистрация',
-                template: 'templates/account.html',
-                styles: 'styles/account.css',
+                template: 'templates/registration.html',
+                // styles: 'styles/account.css',
                 load: () => {
                     new Account();
                 }
@@ -30,7 +30,7 @@ export class Router {
                 route: '#/home',
                 title: 'Главная',
                 template: 'templates/home.html',
-                styles: 'styles/index.css',
+                // styles: 'styles/index.css',
                 load: () => {
                     new Home();
                 }
@@ -39,23 +39,23 @@ export class Router {
                 route: '#/category',
                 title: 'Категории',
                 template: 'templates/category.html',
-                styles: '',
+                // styles: '',
                 load: () => {
                 }
             },
             {
-                route: '#/creation_expenses',
+                route: '#/open_category',
                 title: 'Создание категории расходов',
-                template: 'templates/creation_expenses.html',
-                styles: '',
+                template: 'templates/open_category.html',
+                // styles: '',
                 load: () => {
                 }
             },
             {
-                route: '#/edit-operations',
+                route: '#/kor_category',
                 title: 'Редактирование дохода/расхода',
-                template: 'templates/edit-operations.html',
-                styles: '',
+                template: 'templates/kor_category.html',
+                // styles: '',
                 load: () => {
                 }
             },
@@ -63,7 +63,7 @@ export class Router {
                 route: '#/expenses',
                 title: 'Расходы',
                 template: 'templates/expenses.html',
-                styles: '',
+                // styles: '',
                 load: () => {
                 }
             },
@@ -72,7 +72,7 @@ export class Router {
                 route: '#/income',
                 title: 'Доходы',
                 template: 'templates/income.html',
-                styles: 'styles/income.css',
+                // styles: 'styles/income.css',
                 load: () => {
                 }
             },
@@ -80,7 +80,7 @@ export class Router {
                 route: '#/income_expenses',
                 title: 'Доходы и расходы',
                 template: 'templates/income_expenses.html',
-                styles: 'styles/income_expenses.css',
+                // styles: 'styles/income_expenses.css',
                 load: () => {
                 }
             },
@@ -88,7 +88,7 @@ export class Router {
                 route: '#/kor_category',
                 title: 'Редактирование категории доходов',
                 template: 'templates/kor_category.html',
-                styles: '',
+                // styles: '',
                 load: () => {
                 }
             },
@@ -96,7 +96,7 @@ export class Router {
                 route: '#/kor_expenses',
                 title: 'Редактирование категории расходов',
                 template: 'templates/kor_expenses.html',
-                styles: '',
+                // styles: '',
                 load: () => {
                 }
             },
@@ -104,7 +104,7 @@ export class Router {
                 route: '#/operations',
                 title: 'Создание дохода/расхода',
                 template: 'templates/operations.html',
-                styles: '',
+                // styles: '',
                 load: () => {
                 }
             },
@@ -123,7 +123,7 @@ export class Router {
         }
         document.getElementById('content').innerHTML =
             await fetch(newRoute.template).then(response => response.text());
-        document.getElementById('styles').setAttribute('href', newRoute.styles);
+        // document.getElementById('styles').setAttribute('href', newRoute.styles);
         document.getElementById('title').innerText = newRoute.title;
         newRoute.load();
     }

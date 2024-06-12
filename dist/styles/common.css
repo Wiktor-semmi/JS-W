@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-family: "Roboto 400", sans-serif;
+    overflow: hidden;
+}
+
+@font-face {
+    src: url("/fonts/Roboto-Medium.ttf");
+    font-family: "Roboto 500";
+}
+
+@font-face {
+    src: url("/fonts/Roboto-Regular.ttf");
+    font-family: "Roboto 400";
+}
+
+@font-face {
+    src: url("/fonts/Roboto-Bold.ttf");
+    font-family: "Roboto 700";
+}
+
+.container-nav {
+    width: 219px;
+    border-right: 1px solid #D9D9D9;
+}
+
+.logo img {
+    width: 98px;
+    height: 40px;
+    margin: 40px 70px 20px 50px;
+}
+
+.logo {
+    border-bottom: 1px solid #D9D9D9;
+
+}
+
+.logo-nav span {
+    font-size: 14px;
+    letter-spacing: -0.5px;
+}
+
+.logo-h1 {
+    font-family: "Roboto 500", sans-serif;
+}
+
+.nav-panel {
+    padding: 60px 20px 0 20px;
+}
+
+.nav-panel button {
+    color: #052C65;
+    font-size: 14px;
+
+}
+
+.nav-panel span {
+    letter-spacing: -0.03em;
+}
+
+.nav-panel svg {
+    fill: currentColor;
+}
+
+
+.nav-panel .accordion-body {
+    padding: 0;
+}
+
+.nav-panel .accordion-item {
+    border: none;
+}
+
+.nav-panel .accordion-button {
+    height: 40px;
+
+}
+
+.nav-panel .accordion-button svg {
+    transition: transform 0.3s;
+    width: 10px;
+}
+
+.nav-panel .accordion-button:not(.collapsed) {
+    background: var(--bs-blue);
+    color: #FFFFFF;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.nav-panel .accordion-button:not(.collapsed) svg {
+    transform: rotate(90deg);
+}
+
+.nav-panel .accordion-button::after {
+    display: none;
+}
+
+.nav-panel .accordion-item:last-of-type .accordion-collapse {
+    border: 1px solid var(--bs-blue);
+}
+
+.title {
+    color: #052C65;
+    margin-bottom: 20px;
+}
+
+
+.form {
+    width: 397px;
+}
+
+
+.form-check {
+    margin-bottom: 20px;
+}
+
+.form img {
+    width: 14px;
+}
+.forms-label {
+    left: 16px;
+    top: 7px;
+}
+
+
+
+.form-action {
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.form-creation input {
+    padding: 7px 16px;
+    font-size: 15px;
+}
+
+.form-details .form-group {
+    margin-bottom: 10px;
+}
+
+.auth .input-group {
+    margin-bottom: 10px;
+}
+
+.auth-text {
+    margin-top: 10px;
+    font-size: 12px;
+}
+.auth button:disabled {
+    background-color: var(--bs-gray-400);
+    border: var(--bs-gray-400);
+    cursor: not-allowed;
+}
+
+.cells .card-body a {
+    margin-right: 10px;
+}
+
+.dropdown {
+    border-top: 1px solid #D9D9D9;
+    padding: 20px 0 40px 20px;
+
+}
+
+.dropdown p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.collapse a {
+    margin-left: 18px;
+}
+
+.collapse li {
+    height: 40px;
+}
+
+.nav-text {
+    padding-bottom: 20px;
+    font-size: 14px;
+    font-family: "Roboto 500", sans-serif;
+
+}
+
+.collapse li a {
+    padding-top: 10px;
+}
+
+.cells {
+   gap: 20px;
+}
+
+.main .card {
+    width: 352px;
+    height: 121px;
+}
+
+.cells img {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+.cells .button-btn {
+    width: 103px;
+}
+
+
+.main {
+    padding: 100px 60px;
+    overflow-y: auto;
+}
+
+.main .title {
+    padding-bottom: 40px;
+    margin-bottom: 0;
+}
+
+.main .title h1 {
+    color: #052C65;
+    font-family: "Roboto 500", sans-serif;
+    margin: 0;
+}
+
+.main .button button {
+    margin-right: 18px;
+    width: 100px;
+    font-family: "Roboto 500", sans-serif;
+}
+
+.main .button span {
+    /*font-size: 16px;*/
+    font-family: "Roboto 500", sans-serif;
+    color: black;
+}
+
+.main .button a {
+    text-decoration: underline #6C757D 1px;
+    text-underline-offset: 3px;
+    padding: 0 13px;
+    color: #6C757D;
+    /*font-size: 16px;*/
+    font-family: "Roboto 500", sans-serif
+}
+.modal-remove {
+    padding: 40px;
+    width: 530px;
+}
+.cater-mod {
+    width: 530px;
+}
+.modal-remove .modal-title {
+    font-family: "Roboto 500", sans-serif;
+    color: #290661;
+}
+.modal-remove .modal-action {
+    padding-top: 20px;
+}
+
+.modal-action {
+    gap: 12px;
+}
+

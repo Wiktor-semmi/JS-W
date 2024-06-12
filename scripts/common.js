@@ -4,6 +4,6 @@ function checkUserData() {
     const password = url.searchParams.get('password');
 
     if (!email || !password) {
-        location.href = 'form.html';
+        location.href = 'login.html';
     }
 }

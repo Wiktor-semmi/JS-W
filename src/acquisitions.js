@@ -1,3 +1,5 @@
+import Chart from 'chart.js/auto';
+
 const ctx_a = document.getElementById('myChart-a');
 const ctx_b = document.getElementById('myChart-b');
 
