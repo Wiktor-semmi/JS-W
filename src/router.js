@@ -1,11 +1,20 @@
-import {Account} from "./components/account.js";
-import {Form} from "./components/form.js";
+import {Registration} from "./components/registration.js";
+import {Login} from "./components/login.js";
 import {Home} from "./components/home.js";
+import {Auth} from "./services/auth.js";
 
 
 
 export class Router {
     constructor() {
+        this.contentElement = document.getElementById('content');
+        this.stylesElement = document.getElementById('styles');
+        this.titleElement = document.getElementById('title');
+        this.profileElement = document.getElementById('profile');
+        this.profileFullNameElement = document.getElementById('profile-ull-name');
+        this.profileManylement = document.getElementById('profile-many');
+
+
         this.routes = [
             {
                 route: '#/',
@@ -13,16 +22,16 @@ export class Router {
                 template: 'templates/login.html',
                 // styles: 'styles/form.css',
                 load: () => {
-                    new Form();
+                    new Login();
                 }
             },
             {
                 route: '#/registration',
                 title: 'Регистрация',
                 template: 'templates/registration.html',
-                // styles: 'styles/account.css',
+                // styles: 'styles/auth.css',
                 load: () => {
-                    new Account();
+                    new Registration();
                 }
             },
 
@@ -113,18 +122,36 @@ export class Router {
     }
 
     async openRoute() {
+        const urlRoute = window.location.hash.split('?')[0];
+        if (urlRoute === '#/logout') {
+            await Auth.logout();
+            window.location.href = '#/';
+            return;
+        }
+
         const newRoute = this.routes.find(item => {
-            return item.route === window.location.hash.split('?')[0];
+            return item.route === urlRoute;
         });
 
         if (!newRoute) {
             window.location.href = '#/';
             return;
         }
-        document.getElementById('content').innerHTML =
+        this.contentElement.innerHTML =
             await fetch(newRoute.template).then(response => response.text());
-        // document.getElementById('styles').setAttribute('href', newRoute.styles);
-        document.getElementById('title').innerText = newRoute.title;
+        // this.stylesElement.setAttribute('href', newRoute.styles);
+        this.titleElement.innerText = newRoute.title;
+
+        const userInfo = Auth.getUserInfo();
+        const accessToken = localStorage.getItem(Auth.accessTokenKey);
+        if (userInfo && accessToken) {
+            // this.profileElement.style.display = 'flex';
+            // this.profileFullNameElement.innerText = userInfo.name;
+        } else {
+            this.profileElement.style.display = 'none';
+        }
+
         newRoute.load();
     }
+
 }

@@ -1,8 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/common.css";
 import "../styles/index.css";
-import "../styles/form.css";
-import "../styles/account.css";
+import "../styles/auth.css";
 import "../styles/income.css";
 import "../styles/income_expenses.css";
 

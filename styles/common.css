@@ -3,13 +3,6 @@
     padding: 0;
 }
 
-body {
-    height: 100vh;
-    width: 100%;
-    font-family: "Roboto 400", sans-serif;
-    overflow: hidden;
-}
-
 @font-face {
     src: url("../static/fonts/Roboto-Medium.ttf");
     font-family: "Roboto 500";
@@ -23,6 +16,16 @@ body {
 @font-face {
     src: url("../static/fonts/Roboto-Bold.ttf");
     font-family: "Roboto 700";
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-family: "Roboto 400", sans-serif;
+    overflow: hidden;
+}
+#content {
+    height: 100vh;
 }
 
 .container-nav {
