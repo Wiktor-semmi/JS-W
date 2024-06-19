@@ -7,6 +7,7 @@ export class Registration extends AuthBase {
     constructor() {
         super();
 
+        this.isRegistration = true;
 
         const accessToken = localStorage.getItem(Auth.accessTokenKey);
         if (accessToken) {
@@ -36,13 +37,13 @@ export class Registration extends AuthBase {
                 regex: /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{8,}/,
                 valid: false,
             },
-            // {
-            //     name: 'repeat_password',
-            //     id: 'repeat_password',
-            //     element: null,
-            //     regex: /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{8,}/,
-            //     valid: false,
-            // }
+            {
+                name: 'repeat_password',
+                id: 'repeat_password',
+                element: null,
+                regex: null,
+                valid: false,
+            }
         ];
 
 
@@ -57,32 +58,36 @@ export class Registration extends AuthBase {
     async processForm() {
 
         if (this.validateForm()) {
+            const [name, lastName] = this.fields.find(item => item.name === 'name').element.value.split(' ');
             const email = this.fields.find(item => item.name === 'email').element.value;
             const password = this.fields.find(item => item.name === 'password').element.value;
-            await this.login(email, password);
+
 
             try {
-                const result = await CustomHttp.request(config.host + '/registration', 'POST', {
-                    name: this.fields.find(item => item.name === 'name').element.value,
+                const result = await CustomHttp.request(config.host + '/signup', 'POST', {
+                    name: name,
+                    lastName: lastName,
                     email: email,
                     password: password,
+                    passwordRepeat: this.fields.find(item => item.name === 'repeat_password').element.value,
                 })
 
                 if (result) {
                     if (result.error || !result.user) {
                         throw new Error(result.message);
                     }
-                    Auth.setTokens(result.accessToken, result.refreshToken);
-                    Auth.setUserInfo({
-                        fullName: result.fullName,
-                        userId: result.userId,
-                        email: email
-                    })
-                    location.href = '#/home';
+
+                    // Auth.setUserInfo({
+                    //     name: name,
+                    //     lastName: lastName,
+                    //     userId: result.user.id,
+                    //     email: email
+                    // })
                 }
             } catch (error) {
                 return console.log(error);
             }
+            await this.login(email, password);
         }
     }
 }

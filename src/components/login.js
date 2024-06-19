@@ -1,7 +1,6 @@
 import {AuthBase} from "../base/auth-base.js";
-import {CustomHttp} from "../services/custom-http.js";
 import {Auth} from "../services/auth.js";
-import config from "../../config/config.js";
+
 
 export class Login extends AuthBase {
     constructor() {
@@ -32,12 +31,6 @@ export class Login extends AuthBase {
 
         this.init();
 
-        // this.processElement = document.getElementById('authText');
-        // this.processElement.onclick = function () {
-        //     location.href = 'registration.html';
-        // }
-
-
     }
 
     init() {
@@ -54,33 +47,12 @@ export class Login extends AuthBase {
         }
     }
 
-   async processForm() {
+    async processForm() {
         if (this.validateForm()) {
             const email = this.fields.find(item => item.name === 'email').element.value;
             const password = this.fields.find(item => item.name === 'password').element.value;
-          await this.login(email, password)
-            try {
-                const result = await CustomHttp.request(config.host, 'POST', {
-                    email: email,
-                    password: password,
-                })
+            await this.login(email, password)
 
-                if (result) {
-                    if (result.error || !result.accessToken || !result.refreshToken
-                        || !result.fullName || !result.userId) {
-                        throw new Error(result.message);
-                    }
-                    Auth.setTokens(result.accessToken, result.refreshToken);
-                    Auth.setUserInfo({
-                        fullName: result.fullName,
-                        userId: result.userId,
-                        email: email
-                    })
-                    location.href = '#/home';
-                }
-            } catch (error) {
-                console.log(error);
-            }
         }
     }
 }

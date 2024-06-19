@@ -4,15 +4,14 @@ import {Home} from "./components/home.js";
 import {Auth} from "./services/auth.js";
 
 
-
 export class Router {
     constructor() {
         this.contentElement = document.getElementById('content');
-        this.stylesElement = document.getElementById('styles');
+        // this.stylesElement = document.getElementById('styles');
         this.titleElement = document.getElementById('title');
-        this.profileElement = document.getElementById('profile');
-        this.profileFullNameElement = document.getElementById('profile-ull-name');
-        this.profileManylement = document.getElementById('profile-many');
+        // this.profileElement = document.getElementById('profile');
+        // this.profileFullNameElement = document.getElementById('profile-full-name');
+        // this.profileManylement = document.getElementById('profile-many');
 
 
         this.routes = [
@@ -20,7 +19,6 @@ export class Router {
                 route: '#/',
                 title: 'Авторизация',
                 template: 'templates/login.html',
-                // styles: 'styles/form.css',
                 load: () => {
                     new Login();
                 }
@@ -29,7 +27,6 @@ export class Router {
                 route: '#/registration',
                 title: 'Регистрация',
                 template: 'templates/registration.html',
-                // styles: 'styles/auth.css',
                 load: () => {
                     new Registration();
                 }
@@ -39,7 +36,6 @@ export class Router {
                 route: '#/home',
                 title: 'Главная',
                 template: 'templates/home.html',
-                // styles: 'styles/index.css',
                 load: () => {
                     new Home();
                 }
@@ -48,7 +44,6 @@ export class Router {
                 route: '#/category',
                 title: 'Категории',
                 template: 'templates/category.html',
-                // styles: '',
                 load: () => {
                 }
             },
@@ -56,7 +51,6 @@ export class Router {
                 route: '#/open_category',
                 title: 'Создание категории расходов',
                 template: 'templates/open_category.html',
-                // styles: '',
                 load: () => {
                 }
             },
@@ -64,7 +58,6 @@ export class Router {
                 route: '#/kor_category',
                 title: 'Редактирование дохода/расхода',
                 template: 'templates/kor_category.html',
-                // styles: '',
                 load: () => {
                 }
             },
@@ -72,7 +65,6 @@ export class Router {
                 route: '#/expenses',
                 title: 'Расходы',
                 template: 'templates/expenses.html',
-                // styles: '',
                 load: () => {
                 }
             },
@@ -81,7 +73,6 @@ export class Router {
                 route: '#/income',
                 title: 'Доходы',
                 template: 'templates/income.html',
-                // styles: 'styles/income.css',
                 load: () => {
                 }
             },
@@ -89,7 +80,6 @@ export class Router {
                 route: '#/income_expenses',
                 title: 'Доходы и расходы',
                 template: 'templates/income_expenses.html',
-                // styles: 'styles/income_expenses.css',
                 load: () => {
                 }
             },
@@ -97,7 +87,6 @@ export class Router {
                 route: '#/kor_category',
                 title: 'Редактирование категории доходов',
                 template: 'templates/kor_category.html',
-                // styles: '',
                 load: () => {
                 }
             },
@@ -105,7 +94,6 @@ export class Router {
                 route: '#/kor_expenses',
                 title: 'Редактирование категории расходов',
                 template: 'templates/kor_expenses.html',
-                // styles: '',
                 load: () => {
                 }
             },
@@ -113,7 +101,6 @@ export class Router {
                 route: '#/operations',
                 title: 'Создание дохода/расхода',
                 template: 'templates/operations.html',
-                // styles: '',
                 load: () => {
                 }
             },
@@ -142,14 +129,9 @@ export class Router {
         // this.stylesElement.setAttribute('href', newRoute.styles);
         this.titleElement.innerText = newRoute.title;
 
-        const userInfo = Auth.getUserInfo();
-        const accessToken = localStorage.getItem(Auth.accessTokenKey);
-        if (userInfo && accessToken) {
-            // this.profileElement.style.display = 'flex';
-            // this.profileFullNameElement.innerText = userInfo.name;
-        } else {
-            this.profileElement.style.display = 'none';
-        }
+        // const userInfo = Auth.getUserInfo();
+        // const accessToken = localStorage.getItem(Auth.accessTokenKey);
+
 
         newRoute.load();
     }
