@@ -9,11 +9,7 @@ export class Registration extends AuthBase {
 
         this.isRegistration = true;
 
-        const accessToken = localStorage.getItem(Auth.accessTokenKey);
-        if (accessToken) {
-            // location.href = '#/home';
-            return;
-        }
+
 
         this.fields = [
             {

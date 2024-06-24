@@ -6,11 +6,7 @@ export class Login extends AuthBase {
     constructor() {
         super();
 
-        const accessToken = localStorage.getItem(Auth.accessTokenKey);
-        if (accessToken) {
-            // location.href = '#/home';
-            return;
-        }
+
 
         this.fields = [
             {

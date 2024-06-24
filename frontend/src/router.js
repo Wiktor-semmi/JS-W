@@ -9,8 +9,8 @@ export class Router {
         this.contentElement = document.getElementById('content');
         // this.stylesElement = document.getElementById('styles');
         this.titleElement = document.getElementById('title');
-        // this.profileElement = document.getElementById('profile');
-        // this.profileFullNameElement = document.getElementById('profile-full-name');
+        this.profileElement = document.getElementById('profile');
+        this.profileFullNameElement = document.getElementById('profile-full-name');
         // this.profileManylement = document.getElementById('profile-many');
 
 
@@ -124,14 +124,25 @@ export class Router {
             window.location.href = '#/';
             return;
         }
+
+        const userInfo = localStorage.getItem(Auth.userInfoKey);
+        const accessToken = localStorage.getItem(Auth.accessTokenKey);
+
         this.contentElement.innerHTML =
             await fetch(newRoute.template).then(response => response.text());
         // this.stylesElement.setAttribute('href', newRoute.styles);
         this.titleElement.innerText = newRoute.title;
 
-        // const userInfo = Auth.getUserInfo();
-        // const accessToken = localStorage.getItem(Auth.accessTokenKey);
+        // this.profileFullNameElement.innerText = userInfo.lastName;
 
+
+        if (!accessToken && !userInfo) {
+            if (urlRoute !== '#/' && urlRoute !== '#/registration') {
+                location.href = '#/';
+            }
+        } else {
+            location.href = '#/home';
+        }
 
         newRoute.load();
     }
