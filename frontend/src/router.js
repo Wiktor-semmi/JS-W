@@ -9,9 +9,9 @@ export class Router {
         this.contentElement = document.getElementById('content');
         // this.stylesElement = document.getElementById('styles');
         this.titleElement = document.getElementById('title');
-        this.profileElement = document.getElementById('profile');
-        this.profileFullNameElement = document.getElementById('profile-full-name');
+        // this.profileElement = document.getElementById('profile');
         // this.profileManylement = document.getElementById('profile-many');
+
 
 
         this.routes = [
@@ -106,6 +106,7 @@ export class Router {
             },
 
         ]
+
     }
 
     async openRoute() {
@@ -125,7 +126,8 @@ export class Router {
             return;
         }
 
-        const userInfo = localStorage.getItem(Auth.userInfoKey);
+
+        const userInfo = Auth.getUserInfo();
         const accessToken = localStorage.getItem(Auth.accessTokenKey);
 
         this.contentElement.innerHTML =
@@ -133,15 +135,18 @@ export class Router {
         // this.stylesElement.setAttribute('href', newRoute.styles);
         this.titleElement.innerText = newRoute.title;
 
-        // this.profileFullNameElement.innerText = userInfo.lastName;
+        const profileFullNameElement = document.getElementById('profile-full-name');
+        if (profileFullNameElement) {
+            profileFullNameElement.innerText = userInfo.name + ' ' + userInfo.lastName;
+
+        }
+
 
 
         if (!accessToken && !userInfo) {
             if (urlRoute !== '#/' && urlRoute !== '#/registration') {
                 location.href = '#/';
             }
-        } else {
-            location.href = '#/home';
         }
 
         newRoute.load();
