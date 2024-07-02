@@ -2,6 +2,7 @@ import {Registration} from "./components/registration.js";
 import {Login} from "./components/login.js";
 import {Home} from "./components/home.js";
 import {Auth} from "./services/auth.js";
+import {Sidebar} from "./components/sidebar.js";
 
 
 export class Router {
@@ -134,6 +135,13 @@ export class Router {
             await fetch(newRoute.template).then(response => response.text());
         // this.stylesElement.setAttribute('href', newRoute.styles);
         this.titleElement.innerText = newRoute.title;
+
+
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar) {
+            sidebar.innerHTML = await fetch('templates/sidebar.html').then(response => response.text());
+            new Sidebar();
+        }
 
         const profileFullNameElement = document.getElementById('profile-full-name');
         if (profileFullNameElement) {
