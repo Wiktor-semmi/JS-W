@@ -15,18 +15,27 @@ export class Sidebar {
 
         }
         activeLink.classList.add('active');
+      
 
-        const incomeSpan = document.querySelector('[data-link="#/income"]');
-        const expensesSpan = document.querySelector('[data-link="#/expenses"]');
-        const collapseElement = document.querySelector('.collapse:not(.show)');
+const dataLink = activeLink.getAttribute('data-link');
+if (dataLink === "#/income" || dataLink === "#/expenses") {
+    document.getElementById('flush-collapseThree').classList.add('show');
+    // button.setAttribute("aria-expanded", 'true');
+    const incomeLink = document.querySelector('[data-link="#/income"]');
+    const expensesLink = document.querySelector('[data-link="#/expenses"]');
+    const buttonId = document.getElementById('button_id');
+    const spanId = document.getElementById('span_id');
+    if (!incomeLink.classList.contains('collapsed')) {
+        // Если активен элемент "Доходы", меняем его фон на синий
+        buttonId.style.background = 'var(--bs-blue)';
+        spanId.style.color = 'var(--bs-white)';
+    } else if (!expensesLink.classList.contains('collapsed')) {
+        // Если активен элемент "Расходы", меняем его фон на синий
+        expensesLink.style.background = 'var(--bs-blue)';
+    }
 
-        incomeSpan.addEventListener('click', () => {
-            collapseElement.style.display = 'block';
-        });
+}
 
-        expensesSpan.addEventListener('click', () => {
-            collapseElement.style.display = 'block';
-        });
 
 
 
