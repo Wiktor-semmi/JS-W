@@ -175,6 +175,12 @@ body {
 .dropdown p {
     margin: 0;
     font-size: 14px;
+    line-height: 14px;
+    padding-top: 4px;
+}
+.dropdown a {
+    font-size: 12px;
+    line-height: 12px;
 }
 
 .collapse a {

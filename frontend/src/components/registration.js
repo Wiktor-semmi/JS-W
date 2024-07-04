@@ -49,6 +49,7 @@ export class Registration extends AuthBase {
         this.processElement.onclick = () => {
             this.processForm();
         }
+
     }
 
     async processForm() {
@@ -86,4 +87,5 @@ export class Registration extends AuthBase {
             await this.login(email, password);
         }
     }
+
 }

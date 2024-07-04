@@ -14,7 +14,6 @@ export class Router {
         // this.profileManylement = document.getElementById('profile-many');
 
 
-
         this.routes = [
             {
                 route: '#/',
@@ -149,15 +148,15 @@ export class Router {
 
         }
 
-
-
         if (!accessToken && !userInfo) {
             if (urlRoute !== '#/' && urlRoute !== '#/registration') {
                 location.href = '#/';
             }
         }
 
+
         newRoute.load();
     }
+
 
 }
