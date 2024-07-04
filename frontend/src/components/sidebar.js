@@ -58,7 +58,7 @@ export class Sidebar {
     }
     balance() {
 
-            const receivedBalance = 100 + '$';
+            const receivedBalance = 0 + ' - $';
             const balanceElement = document.getElementById('profile-many');
             balanceElement.textContent = receivedBalance;
 
