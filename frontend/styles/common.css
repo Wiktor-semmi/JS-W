@@ -92,7 +92,7 @@ body {
 
 .nav-panel .accordion-button:not(.collapsed) {
     background: var(--bs-blue);
-    color: #FFFFFF;
+    color: var(--bs-white);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }

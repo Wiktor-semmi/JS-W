@@ -8,10 +8,7 @@ import {Sidebar} from "./components/sidebar.js";
 export class Router {
     constructor() {
         this.contentElement = document.getElementById('content');
-        // this.stylesElement = document.getElementById('styles');
         this.titleElement = document.getElementById('title');
-        // this.profileElement = document.getElementById('profile');
-        // this.profileManylement = document.getElementById('profile-many');
 
 
         this.routes = [
@@ -132,7 +129,7 @@ export class Router {
 
         this.contentElement.innerHTML =
             await fetch(newRoute.template).then(response => response.text());
-        // this.stylesElement.setAttribute('href', newRoute.styles);
+
         this.titleElement.innerText = newRoute.title;
 
 

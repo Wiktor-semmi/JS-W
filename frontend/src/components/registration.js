@@ -73,13 +73,6 @@ export class Registration extends AuthBase {
                     if (result.error || !result.user) {
                         throw new Error(result.message);
                     }
-
-                    // Auth.setUserInfo({
-                    //     name: name,
-                    //     lastName: lastName,
-                    //     userId: result.user.id,
-                    //     email: email
-                    // })
                 }
             } catch (error) {
                 return console.log(error);
