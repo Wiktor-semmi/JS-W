@@ -54,25 +54,25 @@ export class Sidebar {
     }
 
 
-     balance() {
-        // try {
-        //
-        //     const result = CustomHttp.request(config.host + '/balance');
-        //     if (result) {
-        //         if (result.error) {
-        //             const receivedBalance = 0 + ' - $';
-        //             const balanceElement = document.getElementById('profile-many');
-        //             balanceElement.textContent = receivedBalance;
-        //         }
-        //
-        //         const receivedBalance = result + ' - $';
-        //         const balanceElement = document.getElementById('profile-many');
-        //         balanceElement.textContent = receivedBalance;
-        //     }
-        // } catch (error) {
-        //     console.error('Ошибка при выполнении запроса:', error);
-        //
-        // }
+    async balance() {
+        try {
+
+            const result = await CustomHttp.request(config.host + '/balance');
+            if (result) {
+                if (result.error) {
+                    const receivedBalance = 0 + ' - $';
+                    const balanceElement = document.getElementById('profile-many');
+                    balanceElement.textContent = receivedBalance;
+                }
+
+                const receivedBalance = result.balance + ' - $';
+                const balanceElement = document.getElementById('profile-many');
+                balanceElement.textContent = receivedBalance;
+            }
+        } catch (error) {
+            console.error('Ошибка при выполнении запроса:', error);
+
+        }
 
     }
 
