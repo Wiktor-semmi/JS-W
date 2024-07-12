@@ -1,0 +1,112 @@
+<div class="d-flex h-100">
+    <div class="container-nav d-flex flex-column h-100 flex-shrink-0" id="sidebar"></div>
+
+    <div class="main flex-grow-1">
+        <div class="title">
+            <h1>Расходы</h1>
+        </div>
+        <div class="cells flex-wrap d-flex">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Еда</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">
+                        Удалить
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Жильё</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Здоровье</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Кафе</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Авто</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Одежда</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Развлечения</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Счета</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button class="btn btn-danger">Удалить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Спорт</h3>
+                    <a href="#" class="btn btn-primary ">Редактировать</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <img src="/images/plus.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="delete">
+    <div class=" d-flex justify-content-center align-items-center h-100">
+        <div class="card card-delete expenses-delete" style="width: 34rem;">
+            <div class="card-body text-center">
+                <h5 class="card-title">Вы действительно хотите удалить категорию?</h5>
+                <a href="#" class="btn btn-success ">Да, удалить</a>
+                <a href="#" class="btn btn-danger">Не удалять</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="removeModalLabel" aria-hidden="true">
+    <div class="modal-dialog d-flex justify-content-center align-items-center h-100 ">
+        <div class="modal-content cater-mod">
+            <div class="modal-remove">
+                <h5 class="modal-title text-center" id="removeModalLabel">Вы действительно хотите удалить
+                    категорию?</h5>
+                <div class="modal-action d-flex justify-content-center">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Да, удалить</button>
+                    <button type="button" class="btn btn-danger">Не удалять</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
