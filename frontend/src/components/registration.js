@@ -4,11 +4,11 @@ import {Auth} from "../services/auth.js";
 import config from "../../config/config.js";
 
 export class Registration extends AuthBase {
-    constructor() {
+    constructor(page) {
         super();
 
         this.isRegistration = true;
-
+        this.page = page;
 
 
         this.fields = [
@@ -60,6 +60,26 @@ export class Registration extends AuthBase {
             const password = this.fields.find(item => item.name === 'password').element.value;
 
 
+            if (this.page === 'signup') {
+                try {
+                    const result = await CustomHttp.request(config.host + '/signup', 'POST', {
+                        name: this.fields.find(item => item.name === 'name').element.value,
+                        lastName: this.fields.find(item => item.name === 'lastName').element.value,
+                        email: email,
+                        password: password,
+                    })
+
+                    if (result) {
+                        if (result.error || !result.user) {
+                            throw new Error(result.message);
+                        }
+                    }
+                } catch (error) {
+                    return console.log(error);
+                }
+            }
+
+
             try {
                 const result = await CustomHttp.request(config.host + '/signup', 'POST', {
                     name: name,
@@ -73,6 +93,7 @@ export class Registration extends AuthBase {
                     if (result.error || !result.user) {
                         throw new Error(result.message);
                     }
+
                 }
             } catch (error) {
                 return console.log(error);

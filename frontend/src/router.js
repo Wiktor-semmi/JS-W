@@ -35,7 +35,8 @@ export class Router {
                 template: 'templates/home.html',
                 load: () => {
                     new Home();
-                }
+                },
+                styles: ['']
             },
             {
                 route: '#/category',
