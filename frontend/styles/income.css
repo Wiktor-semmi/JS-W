@@ -2,4 +2,6 @@
     color: #052C65;
     font-family: "Roboto 500", sans-serif;
 }
-
+img#open-card.open-card {
+    cursor: pointer;
+}

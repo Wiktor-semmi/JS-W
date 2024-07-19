@@ -277,4 +277,9 @@ body {
 .modal-action {
     gap: 12px;
 }
-
+button.btn.btn-primary {
+    margin-right: 10px;
+}
+.cells img {
+    cursor: pointer;
+}

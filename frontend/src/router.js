@@ -3,7 +3,7 @@ import {Login} from "./components/login.js";
 import {Home} from "./components/home.js";
 import {Auth} from "./services/auth.js";
 import {Sidebar} from "./components/sidebar.js";
-
+import {Income} from "./components/income.js";
 
 export class Router {
     constructor() {
@@ -57,6 +57,7 @@ export class Router {
                 title: 'Редактирование дохода/расхода',
                 template: 'templates/kor_category.html',
                 load: () => {
+
                 }
             },
             {
@@ -72,6 +73,7 @@ export class Router {
                 title: 'Доходы',
                 template: 'templates/income.html',
                 load: () => {
+                    new Income();
                 }
             },
             {

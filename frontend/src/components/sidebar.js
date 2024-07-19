@@ -1,6 +1,6 @@
 import {CustomHttp} from "../services/custom-http.js";
 import config from "../../config/config";
-import {Auth} from "../services/auth";
+
 
 export class Sidebar {
     constructor() {
@@ -25,11 +25,14 @@ export class Sidebar {
             }
         }
         this.activeLink.classList.add('active');
+
+
     }
 
     initAccordion() {
         const dataLink = this.activeLink.getAttribute('data-link');
-        if (dataLink === "#/income" || dataLink === "#/expenses") {
+        if (dataLink === "#/income" || dataLink === "#/expenses" ||
+            dataLink === "#/kor_category" || dataLink === "#/open_category") {
             document.getElementById('flush-collapseThree').classList.add('show');
             const buttonId = document.getElementById('button_id');
             buttonId.classList.remove('collapsed');
@@ -75,6 +78,7 @@ export class Sidebar {
         }
 
     }
+
 
 
 
