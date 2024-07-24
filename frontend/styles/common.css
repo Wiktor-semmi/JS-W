@@ -280,6 +280,6 @@ body {
 button.btn.btn-primary {
     margin-right: 10px;
 }
-.cells img {
+.open-card {
     cursor: pointer;
 }

@@ -7,7 +7,8 @@
     <ul class="nav flex-column nav-pills flex-grow-1" role="tablist"
         aria-orientation="vertical">
         <li class="nav-item" id="nav_home">
-            <button class="nav-link d-flex align-items-center w-100" data-link="#/home" data-bs-toggle="pill" type="button"
+            <button class="nav-link d-flex align-items-center w-100" data-link="home" data-bs-toggle="pill"
+                    type="button"
                     role="tab" aria-selected="true">
                 <svg width="15" height="14" viewBox="0 0 15 14" fill="none" class="me-2">
                     xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +27,8 @@
             </button>
         </li>
         <li class="nav-item" id="nav_item">
-            <button class="nav-link d-flex align-items-center w-100" data-link="#/income_expenses" data-bs-toggle="pill" type="button"
+            <button class="nav-link d-flex align-items-center w-100" data-link="income_expenses" data-bs-toggle="pill"
+                    type="button"
                     role="tab" aria-selected="false">
                 <svg class="me-2" width="16" height="16" viewBox="0 0 16 16" fill="none">
                     xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +48,7 @@
         <li class="nav-item w-100">
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header"  id="flush-headingThree">
+                    <h2 class="accordion-header" id="flush-headingThree">
                         <button class="accordion-button collapsed d-flex justify-content-between"
                                 type="button"
                                 data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
@@ -66,18 +68,18 @@
 
                             <li class="nav-item" id="nav_income">
                                 <button class="nav-link w-100 text-start"
-                                        data-link="#/income"
+                                        data-link="income"
                                         type="button" role="tab"
                                         aria-selected="true">
-                                        <span>Доходы</span>
+                                    <span>Доходы</span>
                                 </button>
                             </li>
                             <li class="nav-item" id="nav_expenses">
                                 <button class="nav-link w-100 text-start"
                                         type="button" role="tab"
-                                        data-link="#/expenses"
+                                        data-link="expenses"
                                         aria-selected="false">
-                                        <span>Расходы</span>
+                                    <span>Расходы</span>
                                 </button>
                             </li>
                         </ul>
@@ -93,11 +95,12 @@
 </nav>
 <div class="dropdown">
     <div class="d-flex align-items-center link-dark text-decoration-none">
-        <img src="https://github.com/mdo.png" alt="Профиль" width="33" height="33" class="rounded-circle me-2" id="profile">
-      <div class="dropdown-text">
-          <p id="profile-full-name">Roman Chernov</p>
-          <a href="/#/logout" class="profile-logout">Выйти</a>
-      </div>
+        <img src="https://github.com/mdo.png" alt="Профиль" width="33" height="33" class="rounded-circle me-2"
+             id="profile">
+        <div class="dropdown-text">
+            <p id="profile-full-name">Roman Chernov</p>
+            <a href="/#/logout" class="profile-logout">Выйти</a>
+        </div>
 
 
     </div>

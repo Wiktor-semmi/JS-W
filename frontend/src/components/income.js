@@ -1,24 +1,17 @@
-import {Sidebar} from "./sidebar.js";
 import {CustomHttp} from "../services/custom-http.js";
 import config from "../../config/config.js";
 import {Auth} from "../services/auth.js";
 
 export class Income {
     constructor() {
-        this.incomeFull = [];
-        this.incomeResult = null;
-        this.init();
 
-
-        this.processElementB = document.getElementById('income_btn');
-        this.processElementB.onclick = function () {
-            location.href = '#/kor_category';
-        }
+        this.init().then();
 
         this.processElementB = document.getElementById('open-card');
         this.processElementB.onclick = function () {
-            location.href = '#/open_category';
+            location.href = '#/open_category_income';
         }
+
 
     }
 
@@ -26,23 +19,24 @@ export class Income {
         const userInfo = Auth.getUserInfo();
 
 
-        // const userInfo = Auth.getUserInfo();
         if (userInfo) {
-            try {
-                const result = await CustomHttp.request(config.host + '/categories/income/results?userId=' + userInfo.userId);
-                if (result) {
-                    if (result.error) {
-                        throw new Error(result.error);
-                    }
-                    this.incomeResult = result;
 
-                }
-            } catch (error) {
-                return console.log(error);
-            }
+            const result = await CustomHttp.request(config.host + '/categories/income');
+            // if (result) {
+            //        if (result.error || !result.response || (result.response && (result.response.error || !result.response.id))) {
+            //         return alert('Возникла ошибка при запросе доходов. Обратитесь в поддержку');
+            //     }
+            // }
+
+            // result.responseType = "text";
+
+            // result.send();
+            console.log(result)
+            this.processIncome();
         }
-        this.processIncome();
+
     }
+
     processIncome() {
 
     }

@@ -4,6 +4,7 @@ import {Home} from "./components/home.js";
 import {Auth} from "./services/auth.js";
 import {Sidebar} from "./components/sidebar.js";
 import {Income} from "./components/income.js";
+import {Expenses} from "./components/expenses.js";
 
 export class Router {
     constructor() {
@@ -39,14 +40,14 @@ export class Router {
                 styles: ['']
             },
             {
-                route: '#/category',
-                title: 'Категории',
+                route: '#/open_category_income',
+                title: 'Создание категории дохода',
                 template: 'templates/category.html',
                 load: () => {
                 }
             },
             {
-                route: '#/open_category',
+                route: '#/open_category_expenses',
                 title: 'Создание категории расходов',
                 template: 'templates/open_category.html',
                 load: () => {
@@ -65,6 +66,7 @@ export class Router {
                 title: 'Расходы',
                 template: 'templates/expenses.html',
                 load: () => {
+                    new Expenses();
                 }
             },
 
@@ -84,7 +86,7 @@ export class Router {
                 }
             },
             {
-                route: '#/kor_category',
+                route: '#/kor_category_income',
                 title: 'Редактирование категории доходов',
                 template: 'templates/kor_category.html',
                 load: () => {

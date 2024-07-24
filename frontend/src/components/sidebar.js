@@ -4,6 +4,7 @@ import config from "../../config/config";
 
 export class Sidebar {
     constructor() {
+
         this.links = Array.from(document.querySelectorAll('.nav-link'));
 
         this.setActiveLink();
@@ -11,28 +12,29 @@ export class Sidebar {
         this.initSidebar();
         this.balance();
 
+
+
     }
 
     setActiveLink() {
         this.activeLink = this.links.find(link => {
             const dataLink = link.getAttribute('data-link');
-            return dataLink && window.location.href.includes(dataLink)
+            return dataLink && window.location.href.includes(dataLink);
         });
         if (this.activeLink) {
             const activeLinkOld = document.querySelector('.nav-link.active');
             if (activeLinkOld) {
                 activeLinkOld.classList.remove('active');
             }
+            this.activeLink.classList.add('active');
         }
-        this.activeLink.classList.add('active');
 
 
     }
 
     initAccordion() {
         const dataLink = this.activeLink.getAttribute('data-link');
-        if (dataLink === "#/income" || dataLink === "#/expenses" ||
-            dataLink === "#/kor_category" || dataLink === "#/open_category") {
+        if (dataLink === "income" || dataLink === "expenses") {
             document.getElementById('flush-collapseThree').classList.add('show');
             const buttonId = document.getElementById('button_id');
             buttonId.classList.remove('collapsed');
@@ -48,10 +50,10 @@ export class Sidebar {
             if (!dataLink) {
                 const dataLinkParent = target.parentElement.getAttribute('data-link');
                 if (dataLinkParent) {
-                    location.href = dataLinkParent;
+                    location.href = `#/${dataLinkParent}`;
                 }
             } else {
-                location.href = dataLink;
+                location.href = `#/${dataLink}`;
             }
         })
     }
@@ -78,8 +80,6 @@ export class Sidebar {
         }
 
     }
-
-
 
 
 }
