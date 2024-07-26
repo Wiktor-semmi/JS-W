@@ -22,24 +22,31 @@ export class Income {
         if (userInfo) {
 
             const result = await CustomHttp.request(config.host + '/categories/income');
-            // if (result) {
-            //        if (result.error || !result.response || (result.response && (result.response.error || !result.response.id))) {
-            //         return alert('Возникла ошибка при запросе доходов. Обратитесь в поддержку');
-            //     }
-            // }
 
-            // result.responseType = "text";
-
-            // result.send();
             console.log(result)
-            this.processIncome();
+
+
+          
+
+            result.forEach(obj => {
+                if (obj.title) {
+                    // obj.income_text = obj.title;
+                    console.log(obj.title)
+
+                    document.getElementById('income_text').textContent = obj.title;
+                    let cardDelete = document.getElementsByClassName('card_dell');
+                    while (cardDelete.length > 0) {
+                        cardDelete[0].parentNode.removeChild(cardDelete[0]);
+                    }
+                    console.log(cardDelete)
+                }
+            });
         }
-
     }
 
-    processIncome() {
 
-    }
+
+
 }
 
 

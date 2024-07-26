@@ -5,6 +5,7 @@ import {Auth} from "./services/auth.js";
 import {Sidebar} from "./components/sidebar.js";
 import {Income} from "./components/income.js";
 import {Expenses} from "./components/expenses.js";
+import {CreateCategory} from "./components/create-category.js";
 
 export class Router {
     constructor() {
@@ -44,6 +45,7 @@ export class Router {
                 title: 'Создание категории дохода',
                 template: 'templates/category.html',
                 load: () => {
+                    new CreateCategory('income');
                 }
             },
             {
