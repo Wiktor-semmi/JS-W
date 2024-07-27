@@ -6,6 +6,7 @@ import {Sidebar} from "./components/sidebar.js";
 import {Income} from "./components/income.js";
 import {Expenses} from "./components/expenses.js";
 import {CreateCategory} from "./components/create-category.js";
+import {Delete} from "./components/delete.js";
 
 export class Router {
     constructor() {
@@ -108,6 +109,12 @@ export class Router {
                 load: () => {
                 }
             },
+            {
+                route: '/delete',
+                load: () => {
+                    new Delete();
+                }
+            }
 
         ]
 

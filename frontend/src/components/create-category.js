@@ -13,7 +13,12 @@ export class CreateCategory {
         this.createButton = document.getElementById('create');
         this.cancelButton = document.getElementById('cancel');
 
+
         this.createButton.addEventListener('click', () => this.createCategory())
+        this.cancelButton.onclick = function () {
+            location.href = '#/income';
+        }
+
     }
 
     async createCategory() {
@@ -23,7 +28,7 @@ export class CreateCategory {
             console.log(result)
             if (result) {
                 if (result.error) {
-                    alert('Данная категория существует')
+                    alert('Данная категория уже существует')
                 } else {
 
                     location.href = '#/income';
@@ -31,9 +36,11 @@ export class CreateCategory {
             }
 
 
-            // nextElement.innerText = 'title';
         }
 
 
     }
+
+
+
 }

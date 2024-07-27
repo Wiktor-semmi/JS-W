@@ -13,39 +13,60 @@ export class Income {
         }
 
 
+
     }
+
+
 
     async init() {
         const userInfo = Auth.getUserInfo();
-
-
         if (userInfo) {
-
             const result = await CustomHttp.request(config.host + '/categories/income');
 
-            console.log(result)
-
-
-          
-
-            result.forEach(obj => {
-                if (obj.title) {
-                    // obj.income_text = obj.title;
-                    console.log(obj.title)
-
-                    document.getElementById('income_text').textContent = obj.title;
-                    let cardDelete = document.getElementsByClassName('card_dell');
-                    while (cardDelete.length > 0) {
-                        cardDelete[0].parentNode.removeChild(cardDelete[0]);
-                    }
-                    console.log(cardDelete)
-                }
-            });
+            this.procsessIncome(result);
         }
     }
 
+   procsessIncome(result) {
+        const cardsElement = document.getElementById('card-income');
+        if (result && result.length > 0) {
+            console.log(result)
+            result.forEach(inc => {
+
+                const cardElement = document.createElement('div');
+                cardElement.className = 'card';
+
+                const cardBodyElement = document.createElement('div');
+                cardBodyElement.className = 'card-body';
+
+                const cardTitleElement = document.createElement('h3');
+                cardTitleElement.className = 'card-title';
+                cardTitleElement.innerText = inc.title;
+
+                const cardBtnElement = document.createElement('a');
+                cardBtnElement.className = 'btn btn-primary';
+                cardBtnElement.href = "#/kor_category";
+                cardBtnElement.textContent = "Редактировать";
+
+                const cardButtonElement = document.createElement('button');
+                cardButtonElement.className = 'btn btn-danger';
+                cardButtonElement.setAttribute('data-bs-toggle', "modal");
+                cardButtonElement.setAttribute('data-bs-target', "#removeModal");
+                cardButtonElement.textContent = 'Удалить';
+
+                cardBodyElement.appendChild(cardTitleElement);
+                cardBodyElement.appendChild(cardBtnElement);
+                cardBodyElement.appendChild(cardButtonElement);
+
+                cardElement.appendChild(cardBodyElement);
 
 
+                cardsElement.appendChild(cardElement);
+            })
+        }
+
+
+    }
 
 }
 

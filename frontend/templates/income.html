@@ -5,35 +5,10 @@
         <div class="title">
             <h1>Доходы</h1>
         </div>
-        <div class="cells flex-wrap d-flex">
-            <div class="card title ">
-                <div class="card-body" id="records">
-                    <h3 class="card-title income_text" id="income_text">Депозиты</h3>
-                    <a href="#/kor_category"  class="btn btn-primary" id="income_deposits">Редактировать</a>
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
-                </div>
-            </div>
-            <div class="card card_dell title">
-                <div class="card-body">
-                    <h3 class="card-title">Зарплата</h3>
-                    <a href="#/kor_category" class="btn btn-primary" id="income_salary">Редактировать</a>
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
-                </div>
-            </div>
-            <div class="card card_dell title">
-                <div class="card-body">
-                    <h3 class="card-title">Сбережения</h3>
-                    <a href="#/kor_category" class="btn btn-primary" id="income_saving">Редактировать</a>
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
-                </div>
-            </div>
-            <div class="card card_dell title">
-                <div class="card-body">
-                    <h3 class="card-title">Инвестиции</h3>
-                    <a href="#/kor_category" class="btn btn-primary" id="income_investments">Редактировать</a>
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Удалить</button>
-                </div>
-            </div>
+        <div class="cells flex-wrap d-flex" >
+
+            <div class=" cells d-flex" id="card-income"></div>
+
             <div class="card open-card" id="open-card">
                 <div class="card-body d-flex justify-content-center align-items-center">
                         <img src="/images/plus.png" alt="" class="open-card">
@@ -52,8 +27,8 @@
                     Связанные
                     доходы будут удалены навсегда.</h5>
                 <div class="modal-action d-flex justify-content-center">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Да, удалить</button>
-                    <button type="button" class="btn btn-danger">Не удалять</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="delete-income">Да, удалить</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Не удалять</button>
                 </div>
             </div>
         </div>
