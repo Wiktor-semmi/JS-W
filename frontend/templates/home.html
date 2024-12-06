@@ -1,0 +1,38 @@
+<div class="d-flex h-100">
+    <div class="container-nav d-flex flex-column h-100 flex-shrink-0" id="sidebar"></div>
+
+    <div class="main flex-grow-1">
+        <div class="container-main">
+            <div class="title">
+                <h1>Главная</h1>
+            </div>
+
+            <section class="button">
+                <button type="button" class="btn btn-secondary">Сегодня</button>
+                <button type="button" class="btn btn-outline-secondary">Неделя</button>
+                <button type="button" class="btn btn-outline-secondary">Месяц</button>
+                <button type="button" class="btn btn-outline-secondary">Год</button>
+                <button type="button" class="btn btn-outline-secondary">Все</button>
+                <button type="button" class="btn btn-outline-secondary">Интервал</button>
+                <span>c</span> <a href="#">Дата</a>
+                <span>по</span> <a href="#">Дата</a>
+            </section>
+        </div>
+        <div class="graphics d-flex  justify-content-evenly">
+            <div class="graphic">
+                <h2 class="h3 text-center">Доходы</h2>
+                <div class="chart-view">
+                    <canvas id="myChart-a"></canvas>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="graphic ">
+                <h2 class="h3 text-center">Расходы</h2>
+                <div class="chart-view">
+                    <canvas id="myChart-b"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
